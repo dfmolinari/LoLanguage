@@ -43,6 +43,12 @@ public class LoLanguage extends JFrame
         m_serverName.addItem(Item("EU Nordic East", "EUNE"));
         m_serverName.addItem(Item("North America", "NA"));
         m_serverName.addItem(Item("Turkey", "TR"));
+        m_serverName.addItem(Item("Brazil", "BR"));
+        m_serverName.addItem(Item("Russia", "RU"));
+        m_serverName.addItem(Item("Latin America North", "LA1"));
+        m_serverName.addItem(Item("Latin America South", "LA2"));
+        m_serverName.addItem(Item("Japan", "JP"));
+        m_serverName.addItem(Item("Oceania", "OC1"));
 
         m_language.addItem(Item("English GB", "en_GB"));
         m_language.addItem(Item("English US", "en_US"));
@@ -52,6 +58,25 @@ public class LoLanguage extends JFrame
         m_language.addItem(Item("Japanese", "ja_JP"));
         m_language.addItem(Item("French", "fr_FR"));
         m_language.addItem(Item("Turkish", "tr_TR"));
+        m_language.addItem(Item("Russian", "ru_RU"));
+        m_language.addItem(Item("Romanian", "ro_RO"));
+        m_language.addItem(Item("Portuguese", "pt_BR"));
+        m_language.addItem(Item("Polish", "pl_PL"));
+        m_language.addItem(Item("Hungarian", "hu_HU"));
+        m_language.addItem(Item("General Spanish", "es_MX"));
+        m_language.addItem(Item("Spain Spanish", "es_ES"));
+        m_language.addItem(Item("Argentina Spanish", "es_AR"));
+        m_language.addItem(Item("Greek", "el_GR"));
+        m_language.addItem(Item("German", "de_DE"));
+        m_language.addItem(Item("Czech", "cs_CZ"));
+        m_language.addItem(Item("Philippine English", "en_PH"));
+        m_language.addItem(Item("Singapore English", "en_SG"));
+        m_language.addItem(Item("China Chinese", "zh_CN"));
+        m_language.addItem(Item("Taiwan Chinese", "zh_TW"));
+        m_language.addItem(Item("Malaysia Chinese", "zh_MY"));
+        m_language.addItem(Item("Malay", "ms_MY"));
+        m_language.addItem(Item("Vietnamese", "vn_VN"));
+        m_language.addItem(Item("Thai", "th_TH"));
 
         m_launcherButton.addActionListener(new ActionListener() {
             @Override
