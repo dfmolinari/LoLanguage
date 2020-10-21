@@ -1,5 +1,6 @@
 import javax.print.attribute.standard.Destination;
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +16,7 @@ public class LoLanguage extends JFrame
     private JComboBox m_serverName;
     private JComboBox m_language;
     private JButton m_launcherButton;
+    private JLabel m_folderText;
 
     private File m_launcher;
     private File m_launcherSettings;
@@ -78,6 +80,8 @@ public class LoLanguage extends JFrame
         m_language.addItem(Item("Vietnamese", "vn_VN"));
         m_language.addItem(Item("Thai", "th_TH"));
 
+        m_execute.setBorder(new EmptyBorder(0,0,0,0));
+
         m_launcherButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,6 +101,18 @@ public class LoLanguage extends JFrame
                 m_launcher = new File(dir + launcherDir);
                 m_system = new File(dir + systemDir);
                 m_launcherSettings = new File(dir + clientDir);
+
+                if(dir.contains("Riot Games"))
+                {
+                    m_folderText.setText("RIOT GAMES FOLDER SELECTED");
+                    m_folderText.setForeground(Color.green);
+                    m_serverName.setEnabled(true);
+                    m_language.setEnabled(true);
+                    m_execute.setEnabled(true);
+                    ReplaceInFile(m_launcherSettings.getAbsolutePath(),0);
+                    ReplaceInFile(m_launcherSettings.getAbsolutePath(), 1);
+                    ReplaceInFile(m_system.getAbsolutePath(), 2);
+                }
             }
         });
 
@@ -182,7 +198,6 @@ public class LoLanguage extends JFrame
                 {
                     foundAt = i;
                     found = true;
-                    System.out.println("Found " + lineToFind + " at " + i);
                     if(type < 2)
                     {
                         line = "        " + lineToFind + " \"" + replacementValue + "\"" + System.lineSeparator();
